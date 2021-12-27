@@ -11,10 +11,19 @@ Therefore the following is just a sketch and things may change.
 
 ## Running the exercises
 
-To run the exercises (replace `print_point` with the location of the exercise you're working on):
+To run the exercises you need to have installed Git and Rust.
+With those installed you can follow the steps below, typing the commands into a terminal such `bash` or `zsh` in Linux or Mac, or `PowerShell` in Windows:
 
-1. Clone this repo
-2. Navigate into it, e.g. with the command `cd georustlings` in bash
+1. Clone this repo, e.g. with
+    
+    ```
+    git clone https://github.com/georust/rustlings
+    ```
+
+2. Navigate into the `georustlings` folder, e.g. with
+```bash
+cd georustlings # in bash
+```
 3. Identify the exercise you want to work on and navigate into it, e.g. with `cd print_point` to work on the `print_point` exercise
 4. Try running the code with `cargo run print_point`
 5. Run the tests with `cargo test`
