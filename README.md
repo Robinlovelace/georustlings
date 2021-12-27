@@ -19,7 +19,7 @@ To run the exercises (replace `print_point` with the location of the exercise yo
 4. Try running the code with `cargo run print_point`
 5. Run the tests with `cargo test`
 6. Edit the code in the folder and repeat the previous step (or steps) until the tests pass
-7. Think about problems you want to solve, sketch them, and go back to exercise 2.
+7. Think about problems you want to solve, sketch them, and go back to exercise 2
 8. If you've finished working on `georust` exercises, think about new challenges you'd like to add and how to contribute to the community
 
 ## Architecture
@@ -35,8 +35,14 @@ Furthermore, when building new tools building on the foundations provided by the
 ```bash
 cargo new georustlings
 ```
-
 That will create a new crate that allows you to specify not only which crates your code relies on but which versions to use and more.
+Within this tried-and-tested framework, you can add dependencies by editing `Cargo.toml` manually or automatically, e.g. with:
+
+```bash
+cargo install cargo-edit # install the cargo-edit crate, enabling the following command:
+cargo add geo            # add the geo create to the list of dependencies
+```
+
 Due to the advantages of packaging Rust code in crates, and the advantages of allowing others to see and hack these 'mini projects', we organise the challenges in this repo as crates, one exercise per crate.
 `rustlings` organises exercise in folders `variables`, `if`, `move_semantics` etc, corresponding to key concepts in Rust.
 Likewise, the plan is for exercises in `georustlings` to be organised into folders the correspond to key concepts when working with geographic data, e.g. (feedback on these especially welcome):
