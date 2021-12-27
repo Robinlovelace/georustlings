@@ -38,6 +38,26 @@ Likewise, exercises in `georustlings` will be organised into folders the corresp
 - Geometry operations (e.g. buffers): `ex/geomops`
 - Working with attribute data: `ex/attributes`
 
+## Creating a new exercise
 
+Each exercise is a regular library crate. You can make a new one:
 
+```bash
+cargo new --lib some_exercise
+```
 
+You can add whatever dependencies you like, but probably every exercise will at
+least use `geo`. You can add it:
+
+```bash
+cd some_exercise
+cargo add geo
+```
+
+Each exercise is expressed as a unit test. You can work through a particular exercise:
+
+```bash
+cd some_exercise
+cargo test
+# Edit src/lib.rs and fix the problem, then repeat
+```
