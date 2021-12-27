@@ -5,7 +5,9 @@ pub fn stringify_point(pt: Point<f64>) -> String {
     // Change me
     // Hint: Use your IDE to figure out what methods exist for Points, or browse through
     // https://docs.rs/geo
-    format!("{:?}", pt)
+    let x = pt.x();
+    let y = pt.y();
+    format!("y={}, x={}", y, x)
 }
 
 #[cfg(test)]
