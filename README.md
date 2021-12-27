@@ -34,7 +34,7 @@ Likewise, the plan is for exercises in `georustlings` to be organised into folde
 - Geometry operations (e.g. buffers): `ex/geomops`
 - Working with attribute data: `ex/attributes`
 
-To keep things open and to prevent [over-architecting](https://www.stoutsystems.com/over-architecting/)[1]
+To keep things open and to prevent [over-architecting](https://www.stoutsystems.com/over-architecting/)[^1]
 , rather than putting the exercises/crates into these boxes/folders now, we will put them all in the root directory, for now.
 The [`print_point`](print_point) exercise demonstrates the 'point'.
 Replace `some_exercise` with `print_point` (or a more original name for a new exercise) and you will have created a new exercise for `georustlings`.
