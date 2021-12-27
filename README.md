@@ -1,7 +1,3 @@
----
-output: github_document
----
-
 # georustlings
 
 This project is designed to be an 'on-ramp' for people who want to start using, contributing to, and building tools in the [GeoRust](https://github.com/georust/) ecosystem.
