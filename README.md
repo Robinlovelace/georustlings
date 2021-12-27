@@ -9,6 +9,19 @@ It is inspired by [rustlings](https://github.com/rust-lang/rustlings).
 This project is at an early stage in its development so feedback is welcome.
 Therefore the following is just a sketch and things may change.
 
+## Running the exercises
+
+To run the exercises (replace `print_point` with the location of the exercise you're working on):
+
+1. Clone this repo
+2. Navigate into it, e.g. with the command `cd georustlings` in bash
+3. Identify the exercise you want to work on and navigate into it, e.g. with `cd print_point` to work on the `print_point` exercise
+4. Try running the code with `cargo run print_point`
+5. Run the tests with `cargo test`
+6. Edit the code in the folder and repeat the previous step (or steps) until the tests pass
+7. Think about problems you want to solve, sketch them, and go back to exercise 2.
+8. If you've finished working on `georust` exercises, think about new challenges you'd like to add and how to contribute to the community
+
 ## Architecture
 
 The architecture of this project is simpler than that of `rustlings`.
@@ -42,8 +55,6 @@ Replace `some_exercise` with `print_point` (or a more original name for a new ex
 [^1]: "Aside from costing more up-front, over-architecting has long term costs. More code means bugs are more likely."
 
 Contributions in the form of issues and pull requests are welcome.
-
-##
 
 ## Creating a new exercise
 
