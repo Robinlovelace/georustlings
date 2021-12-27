@@ -26,13 +26,16 @@ cargo new georustlings
 That will create a new crate that allows you to specify not only which crates your code relies on but which versions to use and more.
 Due to the advantages of packaging Rust code in crates, and the advantages of allowing others to see and hack these 'mini projects', we organise the challenges in this repo as crates, one exercise per crate.
 `rustlings` organises exercise in folders `variables`, `if`, `move_semantics` etc, corresponding to key concepts in Rust.
-Likewise, exercises in `georustlings` will be organised into folders the correspond to key concepts when working with geographic data, e.g. (feedback on these especially welcome):
+Likewise, the plan is for exercises in `georustlings` to be organised into folders the correspond to key concepts when working with geographic data, e.g. (feedback on these especially welcome):
 
 - Geometry types: in the folder `ex/geo`
 - Data reading and writing: `ex/io`
 - Spatial relations: `ex/relations`
 - Geometry operations (e.g. buffers): `ex/geomops`
 - Working with attribute data: `ex/attributes`
+
+To keep things open and to prevent [over-architecting](https://www.stoutsystems.com/over-architecting/), rather than putting the exercises/crates into these boxes/folders now, we will put them all in the root directory, for now.
+The [`print_point`](print_point) exercise demonstrates the 'point'.
 
 ## Creating a new exercise
 
