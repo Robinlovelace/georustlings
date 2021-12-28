@@ -28,7 +28,7 @@ cd print_point # to work on the print_point exercise
 ```
 4. Try running the code:
 ```bash
-cargo run print_point # if you see output like this ⏬ it worked 🎉
+cargo run # if you see output like this ⏬ it worked 🎉
 #    Compiling print_point v0.1.0 (/home/u/code/georustlings/print_point)
 #     Finished dev [unoptimized + debuginfo] target(s) in 0.31s
 #      Running `target/debug/print_point`
