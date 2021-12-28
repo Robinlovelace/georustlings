@@ -15,21 +15,75 @@ To run the exercises you need to have installed Git and Rust.
 With those installed you can follow the steps below, typing the commands into a terminal such `bash` or `zsh` in Linux or Mac, or `PowerShell` in Windows:
 
 1. Clone this repo, e.g. with
-    
-    ```
-    git clone https://github.com/georust/rustlings
-    ```
-
+```
+git clone https://github.com/georust/rustlings
+```
 2. Navigate into the `georustlings` folder, e.g. with
 ```bash
 cd georustlings # in bash
 ```
-3. Identify the exercise you want to work on and navigate into it, e.g. with `cd print_point` to work on the `print_point` exercise
-4. Try running the code with `cargo run print_point`
-5. Run the tests with `cargo test`
-6. Edit the code in the folder and repeat the previous step (or steps) until the tests pass
-7. Think about problems you want to solve, sketch them, and go back to exercise 2
+3. Identify the exercise you want to work on and navigate into it, e.g. by typing:
+```bash
+cd print_point # to work on the print_point exercise
+```
+4. Try running the code:
+```bash
+cargo run print_point # if you see output like this ⏬ it worked 🎉
+#    Compiling print_point v0.1.0 (/home/u/code/georustlings/print_point)
+#     Finished dev [unoptimized + debuginfo] target(s) in 0.31s
+#      Running `target/debug/print_point`
+# Point(Coordinate { x: 1.23, y: 4.56 })%   
+```
+5. Run the tests
+```bash
+cargo test # you *should* see errors like those below here...
+# your job is to edit the code in the src/ folder to make them pass:
+# Output from the command above before you've solved the exercise:
+# running 1 test
+# test tests::test ... FAILED
+# 
+# failures:
+# 
+# ---- tests::test stdout ----
+# thread 'tests::test' panicked at 'assertion failed: `(left == right)`
+#   left: `"Point(Coordinate { x: 1.23, y: 4.56 })"`,
+#  right: `"y=4.56, x=1.23"`', src/lib.rs:19:9
+# note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+# 
+# 
+# failures:
+#     tests::test
+# 
+# test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+```
+6. Edit the code in the exercise folder and run `cargo test` again, when the tests pass you will see output that give a postitive results like the following:
+```bash
+cargo test
+#    Compiling print_point v0.1.0 (/home/robin/learning/rust/georustlings/print_point)
+#     Finished test [unoptimized + debuginfo] target(s) in 0.33s
+#      Running unittests (target/debug/deps/print_point-90c173b7cd365c33)
+# 
+# running 1 test
+# test tests::test ... ok
+# 
+# test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+# 
+#      Running unittests (target/debug/deps/print_point-0f66e01d6e84a5fb)
+# 
+# running 0 tests
+# 
+# test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+# 
+#    Doc-tests print_point
+# 
+# running 0 tests
+# 
+# test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+```
+7. Think about problems you want to solve, sketch them, and consider solving another exercise in this repo (go back to item 3)
 8. If you've finished working on `georust` exercises, think about new challenges you'd like to add and how to contribute to the community
+
+<!-- Todo: add a nice schematic diagram of this? -->
 
 ## Architecture
 
