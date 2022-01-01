@@ -196,6 +196,7 @@ dependencies = [
  "geo",
  "geo-types",
  "geojson",
+ "serde_json",
 ]
 
 [[package]]
