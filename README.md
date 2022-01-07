@@ -61,8 +61,10 @@ cargo test # you *should* see errors like those below here...
 6. Edit the code in the exercise folder, e.g. by typing the following command in VS Code's [integrated terminal](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_integrated-terminal) (which can be opened with the [VS Code Shortcut](https://code.visualstudio.com/docs/getstarted/tips-and-tricks) `` Ctrl+` ``):
 
 
-after you have made some edits run `cargo test` again. Don't worry if the tests still don't pass, the error messages should help you learn how Rust works (feel free to ask in the issue tracker or in the Rust discord group if you get stuck).
-When you figure out a solution that works, the tests will pass and you will see output like the following 🎉
+after you have made some edits run `cargo test` again. **What if you get stuck, as everyone does at some point?**
+  - Don't worry: the error messages should help you learn how Rust works
+  - Don't suffer in silence! Feel free to ask in the issue tracker or in the Rust discord group for help: https://discord.gg/FRRenrPUSA [![discord](https://img.shields.io/discord/598002550221963289?label=discord&logo=Discord&color=blue)](https://discord.gg/Te3gWeDwmf)
+  - When you figure out a solution that works, the tests will pass and you will see output like the following 🎉
 ```bash
 cargo test
 #    Compiling print_point v0.1.0 (/home/robin/learning/rust/georustlings/print_point)
