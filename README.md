@@ -3,6 +3,7 @@
 This project is designed to be an 'on-ramp' for people who want to start using, contributing to, and building tools in the [GeoRust](https://github.com/georust/) ecosystem.
 
 It is inspired by [rustlings](https://github.com/rust-lang/rustlings).
+If you are new to Rust, as I was when I started this repo, I **recommend installing and working through the exercises in `rustlings`**, at least completing the move_semantics exercises, before attempting the `geo` challenges in this repo.
 
 ## Under construction 🏗️
 
@@ -21,6 +22,7 @@ git clone https://github.com/georust/rustlings
 2. Navigate into the `georustlings` folder, e.g. with
 ```bash
 cd georustlings # in bash
+code -r . # to open the georustlings folder in VS Code
 ```
 3. Identify the exercise you want to work on and navigate into it, e.g. by typing:
 ```bash
@@ -56,7 +58,11 @@ cargo test # you *should* see errors like those below here...
 # 
 # test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 ```
-6. Edit the code in the exercise folder and run `cargo test` again, when the tests pass you will see output that give a postitive results like the following:
+6. Edit the code in the exercise folder, e.g. by typing the following command in VS Code's [integrated terminal](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_integrated-terminal) (which can be opened with the [VS Code Shortcut](https://code.visualstudio.com/docs/getstarted/tips-and-tricks) `` Ctrl+` ``):
+
+
+after you have made some edits run `cargo test` again. Don't worry if the tests still don't pass, the error messages should help you learn how Rust works (feel free to ask in the issue tracker or in the Rust discord group if you get stuck).
+When you figure out a solution that works, the tests will pass and you will see output like the following 🎉
 ```bash
 cargo test
 #    Compiling print_point v0.1.0 (/home/robin/learning/rust/georustlings/print_point)
@@ -80,16 +86,35 @@ cargo test
 # 
 # test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 ```
-7. Think about problems you want to solve, sketch them, and consider solving another exercise in this repo (go back to item 3)
-8. If you've finished working on `georust` exercises, think about new challenges you'd like to add and how to contribute to the community
+7. In the terminal navigate back to the root directory of `georustlings` and try another exercise
+8. Think about problems you want to solve, sketch them, and consider solving another exercise in this repo (go back to item 3)
+9. If you've finished working on `georust` exercises, think about new challenges you'd like to add and how to contribute to the community
 
 <!-- Todo: add a nice schematic diagram of this? -->
+
+## Hints and tips
+
+There are many excellent resources for learning Rust online, notably the Rust book and the `rustlings` gamified exercises that inspired this repo.
+Many of those resources refrain from giving advice down to the level of on which editors to use and how to set-up a productive environment for working with Rust.
+The following are some suggestions based on experience that should help beginners.
+
+1. Use Microsoft's VS Code, which can be installed from [here](https://code.visualstudio.com/download), as your integrated development environment (IDE) and text editor: it has good support for Rust and many other languages, and you can even add your own 'bindings' if you like the feel of Vim or other old school (and highly productive) text editors. After you have installed it, you can launch it from the command line with
+```bash
+code -r georustlings
+```
+2. Use VS Code plugins. The first one to install is probably `rust-analyzer` which can be [installed](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer) by typing `Ctrl+P` to open the quick open interface and then pasting the following: `ext install matklad.rust-analyzer`. See this [video](https://www.youtube.com/watch?v=x_iZEK6Rww4) for a helpful video on extensions for Rust, which also recommends installing:
+  - [`ext install serayuzgur.crates`](https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates) for showing when crates are up-to-date
+  - [`ext install vadimcn.vscode-lldb`](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb) which provides a debugger
+3. When working in VS Code you can switch between the editor and the command line (and back again!) quickly with the shortcut `` Ctrl+` ``. Other useful shortcuts include:
+  - `Ctrl+P` which lets you quickly open files
+  - `Ctrl+R` lets you open files and workspaces
+  - `Ctrl+W` will close the current window, handy after you've finished editing a file to complete an exercise!
 
 ## Architecture
 
 The architecture of this project is simpler than that of `rustlings`.
 `rustlings` provides a command line tool that continuously watches for files in the repo that can be activated with `rustlings watch`, and allows you to see how Rust code works quickly without worrying about build commands etc.
-This is a powerful learning technique and we **recommend anyone new to Rust to work through the exercises in `rustlings`**, at least completing the move_semantics exercises, before attempting the challenges in this repo.
+This is a powerful learning technique.
 
 However, the `rustlings` approach has some costs that, at the time of writing, made it non-trivial to extend.
 As documented in [`rust-lang/rustlings#897`](https://github.com/rust-lang/rustlings/issues/897), it is not easy to make new exercises with dependencies, such as the [`geo`](https://github.com/georust/geo) crate, which lies at the heart of GeoRust.
