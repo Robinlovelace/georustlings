@@ -1,0 +1,20 @@
+city,lat,lng,country,population
+Tokyo,35.685,139.7514,Japan,35676000
+New York,40.6943,-73.9249,United States,19354922
+Mexico City,19.4424,-99.131,Mexico,19028000
+Mumbai,19.017,72.857,India,18978000
+São Paulo,-23.5587,-46.625,Brazil,18845000
+Delhi,28.67,77.23,India,15926000
+Shanghai,31.2165,121.4365,China,14987000
+Kolkata,22.495,88.3247,India,14787000
+Los Angeles,34.1139,-118.4068,United States,12815475
+Dhaka,23.7231,90.4086,Bangladesh,12797394
+Buenos Aires,-34.6025,-58.3975,Argentina,12795000
+Karachi,24.87,66.99,Pakistan,12130000
+Cairo,30.05,31.25,Egypt,11893000
+Rio de Janeiro,-22.925,-43.225,Brazil,11748000
+Ōsaka,34.75,135.4601,Japan,11294000
+Beijing,39.9289,116.3883,China,11106000
+Manila,14.6042,120.9822,Philippines,11100000
+Moscow,55.7522,37.6155,Russia,10452000
+Istanbul,41.105,29.01,Turkey,10061000
