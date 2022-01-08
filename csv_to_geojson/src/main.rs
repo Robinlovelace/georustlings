@@ -1,5 +1,6 @@
 use csv;
 use std::fs::File;
+use std::fs;
 use geojson::{Feature, FeatureCollection, Value};
 
 fn main() {
@@ -8,7 +9,7 @@ fn main() {
     print!("Converting {} to {}", csv_file, geojson_file);
     csv_to_geojson(
         "cities.csv",
-        "cities_test.geojson",
+        "cities.geojson",
     );
 }
 
@@ -43,7 +44,7 @@ pub fn csv_to_geojson(csv_file: &str, geojson_file: &str) {
 mod tests {
     #[test]
     fn it_works() {
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
+        csv_to_geojson("cities.csv", "cities_test.geojson");
+        fs::metadata("cities_test.geojson").is_ok();
+        }
 }
