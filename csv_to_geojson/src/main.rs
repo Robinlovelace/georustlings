@@ -3,10 +3,12 @@ use std::fs::File;
 use geojson::{Feature, FeatureCollection, Value};
 
 fn main() {
-    print!("Converting cities.csv to cities.geojson");
+    let csv_file = "cities.csv";
+    let geojson_file = "cities.geojson";
+    print!("Converting {} to {}", csv_file, geojson_file);
     csv_to_geojson(
         "cities.csv",
-        "cities.geojson",
+        "cities_test.geojson",
     );
 }
 
