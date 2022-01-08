@@ -4,11 +4,14 @@ use geojson::{Feature, FeatureCollection, Value};
 
 fn main() {
     print!("Converting cities.csv to cities.geojson");
-    csv_to_geojson();
+    csv_to_geojson(
+        "cities.csv",
+        "cities.geojson",
+    );
 }
 
-pub fn csv_to_geojson() {
-    let mut reader = csv::Reader::from_path("cities.csv").unwrap();
+pub fn csv_to_geojson(csv_file: &str, geojson_file: &str) {
+    let mut reader = csv::Reader::from_path(csv_file).unwrap();
     let points = reader
         .records()
         // this will silently discard invalid / unparseable records
@@ -25,8 +28,13 @@ pub fn csv_to_geojson() {
         features: points,
         foreign_members: None,
     };
-    let f = File::create("cities.geojson").unwrap();
-    serde_json::to_writer_pretty(f, &fc).unwrap();
+    if geojson_file == "" {
+        println!("{}", serde_json::to_string(&fc).unwrap());
+    } 
+    else {
+        let f = File::create(geojson_file).unwrap();
+        serde_json::to_writer_pretty(f, &fc).unwrap()
+    }
 }
 
 #[cfg(test)]
