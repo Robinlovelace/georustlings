@@ -1,5 +1,6 @@
 use csv;
 use std::fs::File;
+use std::path::Path;
 use geojson::{Feature, FeatureCollection, Value};
 
 fn main() {
@@ -12,31 +13,30 @@ fn main() {
     );
 }
 
-pub fn csv_to_geojson(csv_file: &str, geojson_file: &str) {
-    let mut reader = csv::Reader::from_path(csv_file).unwrap();
-    let points = reader
-        .records()
-        // this will silently discard invalid / unparseable records
-        .filter_map(|record| record.ok())
-        .map(|record| {
-            Feature::from(Value::Point(vec![
-                record[1].parse::<f64>().unwrap(),
-                record[2].parse::<f64>().unwrap(),
-            ]))
-        })
-        .collect();
-    let fc: FeatureCollection = FeatureCollection {
+pub fn csv_to_geojson<T: AsRef<Path>>(csv_file: T, geojson_file: T) {
+    let mut points = Vec::new();
+    let mut reader = csv::Reader::from_path(csv_file).expect("Couldn't create CSV reader");
+    let mut record = csv::ByteRecord::new();
+    while reader.read_byte_record(&mut record).expect("Couldn't read CSV record") {
+        points.push(Feature::from(Value::Point(vec![
+            from_utf8(record.get(0).expect("couldn't retrieve x field from CSV"))
+                .expect("Invalid UTF-8 when parsing x coordinate")
+                .parse::<f64>()
+                .expect("Couldn't convert x coordinate to f64"),
+            from_utf8(record.get(1).expect("couldn't retrieve y field from CSV"))
+                .expect("Invalid UTF-8 when parsing y coordinate")
+                .parse::<f64>()
+                .expect("Couldn't convert y coordinate to f64"),
+        ])));
+    }
+    let fc = FeatureCollection {
         bbox: None,
         features: points,
         foreign_members: None,
     };
-    if geojson_file == "" {
-        println!("{}", serde_json::to_string(&fc).unwrap());
-    } 
-    else {
-        let f = File::create(geojson_file).unwrap();
-        serde_json::to_writer_pretty(f, &fc).unwrap()
-    }
+    let f = File::create(geojson_file).expect("Couldn't create output file");
+    let f = BufWriter::new(f);
+    serde_json::to_writer_pretty(f, &fc).expect("Couldn't write output GeoJSON to file");
 }
 
 #[cfg(test)]
@@ -47,3 +47,5 @@ mod tests {
         assert_eq!(result, 4);
     }
 }
+
+
