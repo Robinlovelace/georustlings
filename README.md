@@ -165,6 +165,7 @@ least use `geo`. You can add it:
 
 ```bash
 cd some_exercise
+cargo install cargo-edit # install the cargo-edit crate, enabling the following command:
 cargo add geo
 ```
 
